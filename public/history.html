@@ -11,13 +11,18 @@
     
     <div class="container col-md-4 col-md-offset-4">
       <form action="/submit" method="post">
-        <h2>Workout History</h2>
+        <h2>Workout Exercises</h2>
         <input type="text" class="form-control" name="workout" placeholder="new workout" autofocus>
         <!-- <input type="text" class="form-control" name="password" placeholder="password" autofocus>
         <input type="text" class="form-control" name="email" placeholder="email" autofocus> -->
         <button class="btn btn-lg btn-primary btn-block" id="submit" type="submit">add</button>
       </form>
-      
+        <!-- div to render workouts -->
+        <div class="col-md-4 col-md-offset-4">
+            <form action="/render" method="get">
+            <input>
+            </form>
+        </div>
     </div>
     </body>
     </html>
