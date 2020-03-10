@@ -1,7 +1,7 @@
-function renderTimer() {
-  $('#clockDisplay').text(moment().format('dddd MMMM Do YYYY, h:mm a'));
-}
-renderTimer();
+// function renderTimer() {
+//   $('#clockDisplay').text(moment().format('dddd MMMM Do YYYY, h:mm a'));
+// }
+// renderTimer();
 
 
 // Click event it will render new workout
