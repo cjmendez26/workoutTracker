@@ -6,7 +6,7 @@ console.log("helloworld");
 // renderTimer();
 // Click Events
 
-// Click event to add a book to the db
+// Click event to add an exercise to the db
 $("#add").on("click", function() {
   console.log("add button clicked");
   // takes the string from the input box
