@@ -1,4 +1,9 @@
-/
+function renderTimer() {
+  $('#clockDisplay').text(moment().format('dddd MMMM Do YYYY, h:mm a'));
+}
+renderTimer();
+
+
 // Click event it will render new workout
 // $(document).on("click", ".submit", function() {
 //     var thisId = $(this).attr("data-id");
