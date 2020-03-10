@@ -23,7 +23,7 @@ $("#add").on("click", function() {
       console.log(data);
       var exercises= $("#exercises").html();
       console.log(exercises);
-      $("#exercises").html(exercises + "<li>" + data.exercise + "</li>");
+      $("#exercises").html(exercises + "<div>" + data.exercise + "</div>");
     });
   return false;
 });
