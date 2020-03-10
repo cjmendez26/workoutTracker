@@ -21,6 +21,8 @@ app.post("/submit", ({ body }, res) => {
   console.log(body);
   Workout.create(body)
     .then(dbWorkout => {
+      console.log("response from database");
+      console.log(dbWorkout);
       res.json(dbWorkout);
     })
     .catch(err => {

@@ -1,8 +1,32 @@
+console.log("helloworld");
+
 // function renderTimer() {
 //   $('#clockDisplay').text(moment().format('dddd MMMM Do YYYY, h:mm a'));
 // }
 // renderTimer();
+// Click Events
 
+// Click event to add a book to the db
+$("#add").on("click", function() {
+  console.log("add button clicked");
+  // takes the string from the input box
+  console.log($("#new-exercise").val());
+  $.ajax({
+    type: "POST",
+    url: "/submit",
+    dataType: "json",
+    data: {
+      exercise: $("#new-exercise").val()
+    }
+  })
+    .then(function(data) {
+      console.log(data);
+      var exercises= $("#exercises").html();
+      console.log(exercises);
+      $("#exercises").html(exercises + "<li>" + data.exercise + "</li>");
+    });
+  return false;
+});
 
 // Click event it will render new workout
 // $(document).on("click", ".submit", function() {
@@ -53,4 +77,3 @@
 //   // Calling our functions
 //   getUnread();
 //   getRead();
-  
