@@ -1,29 +1,4 @@
-// Click Events
-$('#existing a').on('click', function (e) {
-  e.preventDefault()
-  $('#existing a[href="#history.html"]').tab('show')
-})
-
-// Click event to exercise to the db
-$("#addExersice").on("click", function() {
-  $.ajax({
-    type: "POST",
-    url: "/submit",
-    dataType: "json",
-    data: {
-      exercise: $("#exercise").val(),
-      created: Date.now()
-    }
-  })
-    .then(function(data) {
-      console.log(data);
-      getUnread();
-      $("#author").val("");
-      $("#title").val("");
-    }
-    );
-  return false;
-});
+/
 // Click event it will render new workout
 // $(document).on("click", ".submit", function() {
 //     var thisId = $(this).attr("data-id");
