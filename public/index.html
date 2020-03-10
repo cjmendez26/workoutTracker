@@ -1,36 +1,27 @@
+
 <!DOCTYPE HTML>
 <html lang="en-US">
-<head>
-	<meta charset="UTF-8">
-    <meta name="viewport">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Main html</title>
-</head>
-<body class="bg-secondary">
-    <div class="container">
-        <br><br>
-        <div class="row">
-            <div class="col-sm"></div>
-            <div class="col-sm">
-               <h2 class="card-title text-center">WORKOUT TRACKER</h2>  
-            </div>
-            <div class="col-sm">
-                <div class="card bg-secondary" style="width: 10rem;">
-                    <img src="images/tracker.jpg" class="card-img-top" alt="tracker">
-                </div>
-            </div>
-        </div>
-        <br><br>
-        <div class="row">
-            <div class="col-sm">  </div>
-            <div class="col-sm">
-                <form>    
-                    <button type="button" class="btn btn-warning">NEW</button>
-                    <button type="button" class="btn btn-info">EXISTING</button>
-                </form>
-            </div>
-            <div class="col-sm"></div>
-          </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport">
+        <title>Workout Tracker</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body class="bg-secondary">
+    
+    <div class="container col-md-4 col-md-offset-4">
+      <form action="/submit" method="post">
+        <h2 class="text-center">Workout Tracker</h2>
+        <!-- <input type="text" class="form-control" name="workout" placeholder="new workout" autofocus> -->
+        <!-- <input type="text" class="form-control" name="password" placeholder="password" autofocus>
+        <input type="text" class="form-control" name="email" placeholder="email" autofocus> -->
+        <button class="btn btn-lg btn-primary btn-block" id="new" type="submit">New Day</button>
+        <button class="btn btn-lg btn-primary btn-block" id="existing" type="submit">Continue</button>
+      </form>
     </div>
-</body>
-</html>   
+    <a href="/history.html" >History</a>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+    </html>

@@ -1,36 +1,41 @@
-// const express = require("express");
-// const logger = require("morgan");
-// const mongoose = require("mongoose");
+const express = require("express");
+const logger = require("morgan");
+const mongoose = require("mongoose");
 
-// const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
-// const User = require("./userModel.js");
-// const app = express();
+const Workout = require("./workoutModel.js");
+const app = express();
 
-// app.use(logger("dev"));
+app.use(logger("dev"));
 
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-// app.use(express.static("public"));
+app.use(express.static("public"));
 
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/userdb", { useNewUrlParser: true });
 
-// app.post("/submit", ({ body }, res) => {
-//   console.log(body);
-//   User.create(body)
-//     .then(dbUser => {
-//       res.json(dbUser);
-//     })
-//     .catch(err => {
-//       res.json(err);
-//     });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", { useNewUrlParser: true });
+
+app.post("/submit", ({ body }, res) => {
+  console.log(body);
+  Workout.create(body)
+    .then(dbWorkout => {
+      res.json(dbWorkout);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+});
+
+// app.post("/submit", ({body}, res) => {
+//     console.log("submitting new workout");
+//     console.log(body);
 // });
 
-// app.get('/test', function (req, res) {
-//   res.send({'name': 'felipe'})
-// });
 
-// app.listen(PORT, () => {
-//   console.log(`App running on port ${PORT}!`);
-// });
+
+app.listen(PORT, () => {
+  console.log(`App running on port ${PORT}!`);
+});
+
