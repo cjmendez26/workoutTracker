@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3000;
 
-const Workout = require("./workoutModel.js");
+const Plan = require("./planModel.js");
 const app = express();
 
 app.use(logger("dev"));
@@ -19,16 +19,44 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", { u
 
 app.post("/submit", ({ body }, res) => {
   console.log(body);
-  Workout.create(body)
+  Plan.create(body)
     .then(dbWorkout => {
-      console.log("response from database");
+      console.log("response from database after submit");
       console.log(dbWorkout);
-      res.json(dbWorkout);
+      Plan.find().then(dbWorkouts => {
+        console.log("response from database after plans");
+        console.log(dbWorkouts);
+        res.json(dbWorkouts);
+      })
     })
     .catch(err => {
       res.json(err);
     });
 });
+
+app.get("/plans", (req, res) => {
+  Plan.find()
+  .then(dbWorkouts => {
+    console.log("response from database after plans");
+    console.log(dbWorkouts);
+    res.json(dbWorkouts);
+  })
+  .catch(err => {
+    res.json(err);
+  }); 
+})
+
+// app.get("/exercisesoftheday", (req, res) => {
+//   Workout.find({"workoutCreated" : { $gte : new ISODate(`${currentYear}-${currentMonth}-${currentDay}T00:00:00Z`) }})
+//   .then(dbWorkouts => {
+//     console.log("response from database");
+//     console.log(dbWorkouts);
+//     res.json(dbWorkouts);
+//   })
+//   .catch(err => {
+//     res.json(err);
+//   }); 
+// })
 
 // app.post("/submit", ({body}, res) => {
 //     console.log("submitting new workout");
