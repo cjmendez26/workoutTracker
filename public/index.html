@@ -10,17 +10,20 @@
 
 </head>
 
-<body class="bg-secondary">
+<body class="bg-dark">
 
   <div class="container">
-    <div class="row">
+    <div class="card bg-secondary border-0 shadow my-5">
+      <div class="card-body p-5">
+        <div class="row">
       <div class="col-4 offset-2">
-        <h2>Workout Plan</h2>
-        <input type="text" class="form-control" name="workout" placeholder="add new plan" id="new-plan" autofocus>
-        <h4>Plan exercises</h4>
-        <textarea rows="4" cols="50" placeholder="add exercise" id="exercises">
+        <h2>Workout Planner</h2>
+        <button class="btn btn-lg btn-primary btn-block" id="continue">Continue Plan</button>
+        <h4>Plan Exercises</h4>
+        <input type="text" class="form-control" name="workout" placeholder="Add New Plan" id="new-plan" autofocus>
+        <textarea rows="4" cols="41" placeholder="add exercise" id="exercises">
         </textarea>
-        <button class="btn btn-lg btn-primary btn-block" id="submit">submit</button>
+        <button class="btn btn-lg btn-primary btn-block" id="submit">Submit</button>
       </div>
       <div class="col-4 offset-2">
         <h4>Plans</h4>
@@ -28,10 +31,9 @@
       </div>
     </div>
   </div>
+    </div>
+  </div>
 
-
-
-  <a href="index.html">Index</a>
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
